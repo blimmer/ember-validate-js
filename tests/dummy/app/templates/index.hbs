@@ -1,0 +1,18 @@
+<div>
+  <h3>Name</h3>
+  {{input value=model.name}}
+  {{model.nameErrors}}
+</div>
+<div>
+  <h3>Password</h3>
+  {{input value=model.password}}
+  {{model.passwordErrors}}
+</div>
+<div>
+  <h3>Password Confirmation</h3>
+  {{input value=model.passwordConfirmation}}
+  {{model.passwordConfirmationErrors}}
+</div>
+<div>
+  <h3>Model is valid? {{model.constraintsMet}}</h3>
+</div>
