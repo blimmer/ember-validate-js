@@ -62,6 +62,7 @@ describeModule(
 
       it('adds object level validation properties', function() {
         expect(subject.hasOwnProperty('constraintsMet')).to.be.true;
+        expect(subject.hasOwnProperty('constraintsNotMet')).to.be.true;
       });
 
       it('tracks created properties', function() {
@@ -69,8 +70,8 @@ describeModule(
         Object.keys(constraints).forEach(function(constraint) {
           expectedProperties.push(`${constraint}Errors`, `${constraint}Error`, `${constraint}IsValid`);
         });
-        expectedProperties.push('constraintsMet');
-        expect(subject.get('_validationPropsCreated').length).to.equal(13);
+        expectedProperties.push('constraintsMet', 'constraintsNotMet');
+        expect(subject.get('_validationPropsCreated').length).to.equal(14);
         expect(Ember.compare(subject.get('_validationPropsCreated'), expectedProperties)).to.equal(0);
       });
 
@@ -106,6 +107,9 @@ describeModule(
           subject = UserObject.create();
         });
 
+        it('the whole object is invalid initally', function() {
+          expect(subject.get('constraintsNotMet')).to.be.true;
+        });
         it('is invalid initially', function() {
           expect(subject.get('nameIsValid')).to.be.false;
         });
@@ -127,6 +131,7 @@ describeModule(
         it('object meets constraints', function() {
           subject.set('name', 'blimmer');
           expect(subject.get('constraintsMet')).to.be.true;
+          expect(subject.get('constraintsNotMet')).to.be.false;
         });
       });
 
@@ -152,6 +157,9 @@ describeModule(
           subject = UserObject.create();
         });
 
+        it('the whole object is invalid initally', function() {
+          expect(subject.get('constraintsNotMet')).to.be.true;
+        });
         it('is invalid initially', function() {
           expect(subject.get('nameIsValid')).to.be.false;
         });
@@ -183,6 +191,7 @@ describeModule(
         it('object meets constraints', function() {
           subject.set('name', 'blimmer');
           expect(subject.get('constraintsMet')).to.be.true;
+          expect(subject.get('constraintsNotMet')).to.be.false;
         });
       });
 
@@ -208,6 +217,9 @@ describeModule(
           subject = UserObject.create();
         });
 
+        it('the whole object is invalid initally', function() {
+          expect(subject.get('constraintsNotMet')).to.be.true;
+        });
         it('is invalid initially', function() {
           expect(subject.get('passwordIsValid')).to.be.false;
           expect(subject.get('passwordConfirmationIsValid')).to.be.false;
@@ -232,6 +244,7 @@ describeModule(
           subject.set('password', 'password1234!');
           subject.set('passwordConfirmation', 'password1234!');
           expect(subject.get('constraintsMet')).to.be.true;
+          expect(subject.get('constraintsNotMet')).to.be.false;
         });
       });
     });
