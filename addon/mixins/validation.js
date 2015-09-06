@@ -64,5 +64,7 @@ export default Ember.Mixin.create({
     });
 
     this._defineAndTrackProperty('constraintsMet', Ember.computed.and(...validityProps));
+
+    this._defineAndTrackProperty('constraintsNotMet', Ember.computed.not('constraintsMet'));
   }),
 });
