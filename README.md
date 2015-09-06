@@ -176,6 +176,9 @@ to ensure the dependencies are installed and set up
 # Development
 This project works as is, but there are plenty of enhancements to make it better. My ideas are [listed here](https://github.com/blimmer/ember-validate-js/labels/enhancement) and PRs (with tests) are welcome!
 
+## Author
+[Ben Limmer](http://benlimmer.com)
+
 ## Installing
 * `git clone` this repository
 * `npm install`
