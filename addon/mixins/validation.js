@@ -52,7 +52,7 @@ export default Ember.Mixin.create({
     this.get('constraintsMet');
   },
 
-  _initValidations: Ember.on('init', function() {
+  _setupValidations: function() {
     this.set('_validationPropsCreated', Ember.A([]));
 
     const constraints = this.get('constraints');
@@ -64,7 +64,23 @@ export default Ember.Mixin.create({
     });
 
     this._defineAndTrackProperty('constraintsMet', Ember.computed.and(...validityProps));
-
     this._defineAndTrackProperty('constraintsNotMet', Ember.computed.not('constraintsMet'));
+  },
+
+  _initValidations: Ember.on('init', function() {
+    this._setupValidations();
   }),
+
+  resetValidations() {
+    const oldValidationProps = this.get('_validationPropsCreated');
+    oldValidationProps.forEach((oldProp) => {
+      Ember.set(this, oldProp, null);
+    });
+    this._initValidations();
+    this.forceValidation();
+  },
+
+  _constraintsDidChange: Ember.observer('constraints', function() {
+    Ember.run.once(this, 'resetValidations');
+  })
 });

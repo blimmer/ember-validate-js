@@ -1,0 +1,19 @@
+<div>
+  <h3>Field 1</h3>
+  {{input value=obj.field1}}
+  {{obj.field1Error}}
+</div>
+<div>
+  <h3>Field 2</h3>
+  {{input value=obj.field2}}
+  {{obj.field2Error}}
+</div>
+<div>
+  <h3>Field 3</h3>
+  {{input value=obj.field3}}
+  {{obj.field3Error}}
+  <button {{action 'toggleField3Email'}}>Toggle this field being email</button>
+</div>
+<div>
+  <h3>Model is valid? {{obj.constraintsMet}}</h3>
+</div>
