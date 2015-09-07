@@ -1,6 +1,6 @@
 {
   "name": "ember-validate-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A computed-properties driven validations library for Ember.JS powered by validate.js",
   "directories": {
     "test": "tests"
