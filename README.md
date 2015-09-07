@@ -3,6 +3,9 @@
 
 A flexible validations library powered by Ember computed properties and  [validate.js](http://validatejs.org/).
 
+## Disclaimer
+Warning: This project is currently a proof-of-concept and is not yet full-featured. Use at your own risk!
+
 ## Features
 * **Driven by computed properties**
 
