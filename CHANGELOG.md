@@ -1,7 +1,13 @@
 # Change Log
 
-## [0.1.0](https://github.com/blimmer/ember-validate-js/tree/0.1.0) (2015-09-06)
+## [v0.1.1](https://github.com/blimmer/ember-validate-js/tree/v0.1.1) (2015-09-07)
+[Full Changelog](https://github.com/blimmer/ember-validate-js/compare/v0.1.0...v0.1.1)
 
+**Merged pull requests:**
+
+- Install dependencies correctly. [\#8](https://github.com/blimmer/ember-validate-js/pull/8) ([blimmer](https://github.com/blimmer))
+
+## [v0.1.0](https://github.com/blimmer/ember-validate-js/tree/v0.1.0) (2015-09-06)
 **Merged pull requests:**
 
 - README and package.json [\#7](https://github.com/blimmer/ember-validate-js/pull/7) ([blimmer](https://github.com/blimmer))
